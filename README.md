@@ -64,7 +64,7 @@ Let's say, you want to host it on `https://media.mydomain.org`
 global:
   host: 0.0.0.0 
   port: 8118  # internal host and port, leave it as it is
-  base_url: "https://media.mydomain.org"
+  base_url: "https://media.vyshka.club"
   secret_code: "secretpass"
   max_upload_size: "500M"
 ```
@@ -89,7 +89,7 @@ Just proxy all calls from the domain (media.mydomain.org) to pepic backend (0.0.
 ```
 server {
     listen 80;
-    server_name media.mydomain.org;
+    server_name media.vyshka.club;
 
     location / {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
