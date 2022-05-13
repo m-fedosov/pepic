@@ -30,7 +30,7 @@ go run main.go serve --config ./etc/pepic/config.yml
 2. Clone the repo
 
 ```
-git clone git@github.com:vas3k/pepic.git
+git clone git@github.com:m-fedosov/pepic.git
 cd pepic
 ```
 
@@ -86,6 +86,15 @@ You can easily transform it into your favourite k8s config or whatever is fashio
 
 Just proxy all calls from the domain (media.mydomain.org) to pepic backend (0.0.0.0:8118). It can handle static files too.
 
+1. Install Nginx 
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04
+
+2. Create file
+```
+sudo nano /etc/nginx/sites-available/your_domain
+```
+3. Write here
+
 ```
 server {
     listen 80;
@@ -97,6 +106,11 @@ server {
         proxy_pass http://0.0.0.0:8118;
     }
 }
+```
+4. Enable the file 
+Create a link from it to the sites-enabled directory
+```
+sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/
 ```
 
 ## 😍 Contributions
