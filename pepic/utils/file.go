@@ -13,8 +13,11 @@ import (
 
 var canonicalExtensions = map[string]string{
 	".jpeg": ".jpg",
+	".jpe":  ".jpg",
 	".jfif": ".jpg",
 	".qt":   ".mov",
+	".moov": ".mov",
+	".f4v":  ".mp4",
 }
 
 func ExtensionByMimeType(mimeType string) (string, error) {
